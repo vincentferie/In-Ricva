@@ -1,0 +1,85 @@
+<div class="dashboard-page">
+    <div class="mb-3 head-txt">
+        <h5>Hello!</h5>
+        <h3>CAP SIKAN</h3>
+    </div>
+    <div class='content'>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-3 content-page">
+                    <div class="col-md-4 fir-tab">
+                        <div class="circle-image">
+                            <p><i class="fa fa-th-large" aria-hidden="true"></i></p>
+                        </div>
+                        <p class="sec-txt">Nombre de lots</p>
+                        <h3 class="num-txt">300</h3>
+                        <div class="col-txt mb-5">
+                            <div><i class="fa fa-caret-up" aria-hidden="true"><span> 12,20 %</span></i></div>
+                        </div>
+                    </div>
+                        <div class="col-md-4 sec-tab">
+                            <div class="circle-image">
+                                <p><i class="fa fa-th-large" aria-hidden="true"></i></p>
+                            </div>
+                            <p class="sec-txt">Transit</p>
+                            <h3 class="num-txt">20</h3>
+                            <div class="col-txt mb-5">
+                                <div><i class="fa fa-caret-up" aria-hidden="true"><span>02,40 %</span></i></div>
+                            </div>
+                    </div>
+                        <div class="col-md-4 third-tab">
+                            <div class="circle-image">
+                                <p><i class="fa fa-product-hunt" aria-hidden="true"></i> </p>
+                            </div>
+                            <p class="sec-txt">Parking list</p>
+                            <h3 class="num-txt">300</h3>
+                            <div class="col-txt mb-5">
+                                <div><i class="fa fa-caret-up" aria-hidden="true"><span> 12,20 %</span></i></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="fir-label">Transit</label>
+                    <canvas #FirstChart>
+                      {{chartone}}
+                    </canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <label class="sec-label">Transit</label>
+                <canvas #secondChart>
+                  {{charttwo}}
+                </canvas>
+            </div>
+            <div class="col-md-3"> 
+                <label class="sec-label">Lots</label>
+                <canvas #thirdChart>
+                  {{chartthree}}
+                </canvas>
+            </div>
+            <div class="col-md-3 data-total"> 
+                <span>Lots</span>
+                <div class="arrow-circle">
+                    <span><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                    <span class="p-2">Ultimum admiss</span>
+                    <h4 class="pl-10">3 000 000</h4>
+                </div>
+                <div class="arrow-circle">
+                    <span><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                    <span class="p-2">Densas opponunt</span>
+                    <h4 class="pl-10">200 000</h4>
+                </div>
+
+            </div>
+
+            
+        </div>
+
+    </div>
+
+
+
+
+</div>

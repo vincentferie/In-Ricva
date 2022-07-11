@@ -1,0 +1,44 @@
+//import style
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+// If you want to add something do it here
+@import "custom";
+
+$theme-color-1: #67aec5;
+$theme-color-2: #95c7a2;
+$theme-color-3: #637383;
+$theme-color-4: #385068;
+$theme-color-5: #2e5585;
+$theme-color-6: #4d5f72;
+$theme-color-7: #6cbc46;
+
+$primary-color: #8f8f8f;
+$secondary-color: #707070;
+$muted-color: #696969;
+
+$separator-color-light: #313131;
+$separator-color: #424242;
+$background-color: #18191b;
+$foreground-color: #fff;
+
+$theme-color-red-ruby: #900604;
+
+:root {
+    --theme-color-1: #{$theme-color-1};
+    --theme-color-2: #{$theme-color-2};
+    --theme-color-3: #{$theme-color-3};
+    --theme-color-4: #{$theme-color-4};
+    --theme-color-5: #{$theme-color-5};
+    --theme-color-6: #{$theme-color-6};
+    --theme-color-7: #{$theme-color-7};
+    --theme-color-1-10: #{rgba($theme-color-1, 0.1)};
+    --theme-color-2-10: #{rgba($theme-color-2, 0.1)};
+    --theme-color-3-10: #{rgba($theme-color-3, 0.1)};
+    --theme-color-4-10: #{rgba($theme-color-4, 0.1)};
+    --theme-color-5-10: #{rgba($theme-color-5, 0.1)};
+    --theme-color-6-10: #{rgba($theme-color-6, 0.1)};
+    --primary-color: #{$primary-color};
+    --foreground-color: #{$foreground-color};
+    --separator-color: #{$separator-color};
+    --red-color: #{$theme-color-red-ruby};
+}

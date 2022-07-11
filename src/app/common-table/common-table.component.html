@@ -1,0 +1,149 @@
+<div class="animated fadeIn" *ngIf="card_details && card_details.length > 0">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div *ngFor="let item of card_details" class="{{customClassAdd(card_details.length)}}">
+                    <!-- {{(card_details.length == 4 || card_details.length == 3) ? 'col-sm-4 col-lg-3' : 'col-sm-3'}} -->
+                    <div class="card card-values {{item.bg_color}} {{!item.click_val ? 'disabled-div':''}}"
+                        [ngClass]="{'header-card': (cardActive && item.click_val && item.click_val == cardActive) ? true: false }">
+                        <div class="card-cated" (click)="headercardfun(item.click_val)">
+                            <div class="svg-pl">
+                                <i class="{{item.icon}}"></i>
+                                <h6>{{item.value}}</h6>
+                                <p>{{item.title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0 tabls-heading">
+            <h3>{{tablename | titlecase }}</h3>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+            <div *ngIf="add_btn" class="mr-1 mb-1 table-add-btn">
+                <button class="btn btn-primary add_btn" routerLink="{{addBtnUrl}}"> {{addBtnName | titlecase }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-lg-3">
+                            <div class="mr-1 mb-1" *ngIf="bulk_action">
+                                <select name="bulk-action" id="bulk-action" class="form-control"
+                                    [(ngModel)]="bulkactions" placeholder="Bulk Action">
+                                    <option value="">Bulk Action</option>
+                                    <option value="delete">Delete</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2">
+                            <div class="mr-1 mb-1" *ngIf="bulk_action && bulkSelect">
+                                <button type="button" (click)="bulkActionChange()"
+                                    class="btn btn-light apply-btn">Apply</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-lg-3 search-input-tag">
+                            <div class="mr-1 mb-1" *ngIf="showSearch">
+                                <input class="form-control" placeholder="Search"
+                                    (keyup)="onSearchKeyUp($event.target.value)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ng2-smart-table [settings]="settings" [source]="source" (custom)="onCustomAction($event)"
+                        [currentPage]="currentPerPage" [count]="count" (Pagechange)="Pagechange($event)"
+                        [itemsPerPage]="itemsPerPage" (PerPagechange)="PerPagechange($event)"
+                        (rowclickactionData)="rowclickaction($event)" (userRowSelect)="onUserRowSelect($event)">
+                    </ng2-smart-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div bsModal #deleteModal="bs-modal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content cases-model" style="border-radius: 10px;">
+            <div class="modal-body">
+                <div class="modal-header" style="border-bottom: none;padding: 0;">
+                    <button type="button" class="close" aria-label="Close" (click)="deleteModal.hide()">
+                        <span aria-hidden="true"> <i class="fa fa-times" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <h6 *ngIf="!forcedelete" style="color: #cb7a4b;"> Voulez-vous supprimer ? </h6>
+                <h6 *ngIf="forcedelete" style="color: #cb7a4b;"> Voulez-vous supprimer ? </h6>
+                <div class="form-group grouping-strains row bulk-delete-form" *ngIf="bulkSelect">
+                    <div class="col-md-6">
+                        <div class="group-control">
+                            <label for="username">Username <span class="mandatory">*</span></label>
+                            <input type="text" id="username" [(ngModel)]="username" name="username"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="group-control">
+                            <label for="password">Password <span class="mandatory">*</span></label>
+                            <input type="password" id="password" [(ngModel)]="password" name="password"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p class="text-center" style="padding-left: 30px;
+                    padding-right: 30px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                        eirmod tempor invidunt ut labore et</p>
+                </div>
+                <div class="modal-footer" style="border-top: none;justify-content: center;">
+                    <button type="button" class="btn conform-cancel"
+                        (click)="deleteModal.hide();username='';password=''">
+                        Non
+                    </button>
+                    <div style="padding: 5px 5px;"></div>
+                    <button type="button" class="btn conform-dels" (click)="confirm()">
+                        Oui
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div bsModal #restoreModal="bs-modal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content cases-model">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Restore record</h5>
+                    <button type="button" class="close" aria-label="Close" (click)="restoreModal.hide()">
+                        <span aria-hidden="true"> <i class="fa fa-times" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6> Are you sure you want to Restore? </h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn conform-dels" (click)="confirmRestore()">
+                        Yes
+                    </button>
+                    <button type="button" class="btn conform-cancel" (click)="restoreModal.hide()">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

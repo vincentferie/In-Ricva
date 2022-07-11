@@ -1,0 +1,53 @@
+.signup-page{
+    margin-top: 120px;
+}
+.head-txt{
+    color: #cb7a4b;
+}
+.img-head{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    li{
+        float: left;
+        border: 1px solid #CB7A4B;
+        border-radius: 21px;
+        opacity: 1;
+        top: 32px;
+        left: 369px;
+        width: 95px;
+        height: 41px;
+        opacity: 1;
+        margin: 5px;
+        padding: 9px;
+       
+    }
+    li.first-img {
+        border: none;
+        padding: 0 0 0 0;
+        border-radius: 21px;
+        opacity: 1;
+        top: 32px;
+        left: 369px;
+        width: 95px;
+        height: 41px;
+        opacity: 1;
+    }
+}
+.login-button {
+    color: #fff;
+    background-color: #cb7a4b;
+    border: none;
+    border-radius: 10px;
+}
+.loginform{
+    border: 0.5 solid #707070;
+    border-radius: 7px;
+}
+.home-page{
+    max-width: 100%;
+}
+.corousel-div{
+    margin-top: 5%;
+}

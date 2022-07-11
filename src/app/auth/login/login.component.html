@@ -1,0 +1,78 @@
+<div class="row home-page">
+    <div class="col-md-7 corousel-div">
+    <carousel data-interval="false" [noWrap]="noWrapSlides"  [showIndicators]="showIndicator">
+        <slide *ngFor="let slide of slides; let index=index">
+            <img [src]="slide.image" alt="image slide" style="display: block; width: 90%;">
+            <div class="carousel-caption">
+                <h4>Slide {{index}}</h4>
+                <p>{{slide.text}}</p>
+            </div>
+        </slide>
+        </carousel>
+</div>
+<div class="col-md-5">
+    <div class="signup-page container-fluid d-flex justify-content-center list-container">
+        <div class="justify-content-center mt-5 mb-5">
+            <div class="text-center mt-4 mb-4">
+                <img src="../../../assets/image/auth-logo-ricva.png" alt="">
+                <h5 class="head-txt">{{'Speculations' | translate}}</h5>
+                <ul class="img-head">
+                    <li class="first-img">
+                        <img src="assets/image/fir.png">
+                    </li>
+                    <li>
+                        <img src="assets/image/sec.png"> 
+                        {{'cocoa' | translate}}
+                    </li>
+                    <li>
+                        <img src="assets/image/third.png"> 
+                        {{'rubber_tree' | translate}}
+                    </li>
+                    <li>
+                        <img src="assets/image/four.png"> 
+                        {{'shea' |  translate}}
+                    </li>
+                </ul>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"  class="form-validation mt-10 loginform">
+                <label for="email">{{'Email or Phone' | translate}}</label>
+                <div class="form-group" ng-class="{ 'has-error' : f.email.$invalid && !f.email.$pristine, 'has-success' : f.email.$valid && !f.email.$pristine}">
+                    <input type="text"  class="form-control underline-input" name="email" 
+                    formControlName="email">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback d-block">
+                        <div *ngIf="f.email.errors.required">{{'EMAIL IS REQUIRED' | translate}}</div>
+                    </div>
+                </div>
+                <label for="email">{{'Password' | translate}}</label>
+                <div class="form-group" ng-class="{ 'has-error' : f.password.$invalid && !f.password.$pristine, 'has-success' : f.password.$valid && !f.password.$pristine}">
+                    <input type="password"  name="password" class="form-control underline-input"
+                    formControlName="password">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback d-block">
+                        <div *ngIf="f.password.errors.required">{{'ENTER PASSWORD' | translate}}</div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <div class="form-actions">
+                        <button type="submit" class="p-2 pl-5 pr-5 login-button">{{'Login' | translate}}</button>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <a class="adjust text-left mt-3">{{'You forgot your password?' | translate}}</a>
+            </div>
+            <div class="text-center newsignup">
+                <a class="" ><strong class="regist">{{'Reset your password.' | translate}}</strong></a>
+            </div>
+            <!--<li class="sindtxt">
+                    <span>Don't have an account? Creating one is quick and easy!  <br><br>
+                        <a href="/signup" class="grn-btn">Click Here</a>
+                    </span>
+               </li>-->
+        </div>
+    </div>
+    
+
+</div>
+
+
+</div>

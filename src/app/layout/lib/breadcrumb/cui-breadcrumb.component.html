@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+  <ng-template ngFor let-breadcrumb [ngForOf]="breadcrumbs | async" let-last = last>
+    <li class="breadcrumb-item"
+        *ngIf="breadcrumb.label.title && (breadcrumb.url.slice(-1) == '/' || last)"
+        [ngClass]="{active: last}">
+      <a *ngIf="!last && breadcrumb.label.title =='Home' " [routerLink]="breadcrumb.url"><i class="fa fa-home home-icon-breadcrumb"></i> {{breadcrumb.label.title}}</a>
+      <a *ngIf="!last && breadcrumb.label.title !='Home' " [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</a>
+      <span *ngIf="last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</span>
+    </li>
+  </ng-template>
+  <ng-content></ng-content>
+</ol>

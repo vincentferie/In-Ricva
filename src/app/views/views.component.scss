@@ -1,0 +1,82 @@
+::ng-deep .seleted-menu i {
+    color: #20a8d8 !important;
+}
+
+.app-body {
+    height: calc(100vh - 100px);
+}
+
+.card-body {
+    min-height: 350px;
+}
+
+.notify {
+    width: 50px;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    background: #0774BE 0% 0% no-repeat padding-box;
+    box-shadow: 4px 13px 24px #0774BE66;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.flag-image {
+    width: 20%;
+    height: 20%;
+}
+
+.main-head li {
+    margin: 5px;
+}
+
+.user-init {
+    margin: auto;
+    top: 24px;
+    left: 1635px;
+    width: 224px;
+    height: 49px;
+    background: #edecec 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 12px;
+}
+
+.img-head {
+    float: right;
+}
+
+.img-head li {
+    border: 1px solid #CB7A4B;
+    border-radius: 21px;
+    opacity: 1;
+    top: 32px;
+    left: 369px;
+    width: 95px;
+    height: 41px;
+    opacity: 1;
+    margin: 5px;
+    padding: 9px;
+}
+
+.img-head li.first-img {
+    border: none;
+    padding: 0 0 0 0;
+    border-radius: 21px;
+    opacity: 1;
+    top: 32px;
+    left: 369px;
+    width: 95px;
+    height: 41px;
+    opacity: 1;
+}
+
+.edit-butt {
+    top: 112px;
+    left: 1565px;
+    width: 294px;
+    height: 53px;
+    background: var(--unnamed-color-cb7a4b) 0% 0% no-repeat padding-box;
+    background: #CB7A4B 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
