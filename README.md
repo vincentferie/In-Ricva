@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9311c5e52a41408fa53b6d8636be0498)](https://www.codacy.com/gh/vincentferie/In-Ricva/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vincentferie/In-Ricva&amp;utm_campaign=Badge_Grade)
+
 # Ricva
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
